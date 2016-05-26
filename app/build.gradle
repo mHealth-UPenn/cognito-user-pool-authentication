@@ -24,4 +24,6 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.2.17'
+    compile 'com.amazonaws:aws-android-sdk-core:2.2.17+'
+
 }
