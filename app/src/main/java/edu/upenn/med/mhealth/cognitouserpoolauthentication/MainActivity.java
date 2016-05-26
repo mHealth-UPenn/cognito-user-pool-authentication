@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        AppHelper.setUser(username);
+        //AppHelper.setUser(username);
 
         password = inPassword.getText().toString();
         if(password == null || password.length() < 1) {
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         CognitoUser user = AppHelper.getPool().getCurrentUser();
         username = user.getUserId();
         if(username != null) {
-            AppHelper.setUser(username);
+            //AppHelper.setUser(username);
             inUsername.setText(user.getUserId());
             user.getSessionInBackground(authenticationHandler);
         }
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                                              String un) {
             if(un != null) {
                 username = un;
-                AppHelper.setUser(un);
+                //AppHelper.setUser(un);
             }
             if(password == null) {
                 inUsername.setText(un);

@@ -1,5 +1,6 @@
 package edu.upenn.med.mhealth.cognitouserpoolauthentication;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +22,8 @@ public class HomeScreenActivity extends AppCompatActivity {
         user = AppHelper.getPool().getCurrentUser();
         TextView tv = (TextView) findViewById(R.id.loggedInUser);
         tv.setText("You are logged in as " + user.getUserId());
+
+        new SetTableTask().execute();
     }
 
     public void logOut(View view) {
@@ -28,5 +31,10 @@ public class HomeScreenActivity extends AppCompatActivity {
         finish();
     }
 
-
+    private class SetTableTask extends AsyncTask<Void, Void, Void> {
+        protected Void doInBackground(Void...voids){
+            DynamoDBManager.createTable();
+            return null;
+        }
+    }
 }
