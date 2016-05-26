@@ -85,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void launchUser() {
         Intent intent = new Intent(this, HomeScreenActivity.class);
-        intent.putExtra("name", username);
         startActivity(intent);
     }
 
@@ -132,6 +131,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+
+
     };
 
 
