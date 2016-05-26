@@ -1,6 +1,5 @@
 package edu.upenn.med.mhealth.cognitouserpoolauthentication;
 
-import android.widget.Toast;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.dynamodbv2.model.KeyType;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
@@ -10,9 +9,6 @@ import com.amazonaws.services.dynamodbv2.model.KeySchemaElement;
 import com.amazonaws.services.dynamodbv2.model.ProvisionedThroughput;
 import com.amazonaws.services.dynamodbv2.model.ScalarAttributeType;
 
-/**
- * Created by julieengel on 5/26/16.
- */
 public class DynamoDBManager {
     /*
      * Creates a table with the following attributes: Table name: testTableName

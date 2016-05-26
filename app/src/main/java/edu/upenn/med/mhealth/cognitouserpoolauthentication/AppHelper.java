@@ -19,9 +19,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
-/**
- * Created by julieengel on 5/26/16.
- */
+
 public class AppHelper {
 
     private static Map<String, String> signUpFieldsC2O;
@@ -34,33 +32,35 @@ public class AppHelper {
     /**
      * Add your USER POOL ID here
      */
-    public static final String USER_POOL_ID = "us-east-1_naS1vLAeO";
+    public static final String USER_POOL_ID = "CHANGE_ME";
 
     /**
      * Add your APP ID here
      */
-    private static final String CLIENT_ID = "56t5vr0di9ve7vco195gcfdda";
+    private static final String CLIENT_ID = "CHANGE_ME";
 
     /**
      * APP SECRET associated with your app id - if the App id does not have an associated App secret,
      * set the App secret to null.
      * e.g. clientSecret = null;
      */
-    private static final String CLIENT_SECRET = "1a783bac6st0tdrc5uphv6shpcerses1klhf1tgjj6a9ubhsph7k";
+    private static final String CLIENT_SECRET = "CHANGE_ME";
 
     /**
      * Add your IDENTITY POOL ID here
      */
-    public static final String IDENTITY_POOL_ID = "us-east-1:48504083-07ee-45e3-9852-4a75f4d194d5";
+    public static final String IDENTITY_POOL_ID = "CHANGE_ME";
 
-    // Note that spaces are not allowed in the table name
-    public static final String TEST_TABLE_NAME = "Test2";
+    /**
+     * Add your DESIRED TABLE NAME here
+     * Note that spaces are not allowed in the table name
+     */
+
+    public static final String TEST_TABLE_NAME = "CHANGE_ME";
 
     // User details from the service
     private static CognitoUserSession currSession;
     private static CognitoUserDetails userDetails;
-
-    // User details to display - they are the current values, including any local modification
 
     public static void init(Context context) {
         if (appHelper != null && userPool != null) {

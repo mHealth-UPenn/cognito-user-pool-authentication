@@ -1,16 +1,12 @@
 package edu.upenn.med.mhealth.cognitouserpoolauthentication;
 
 import android.content.Context;
-import android.util.Log;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.CognitoCachingCredentialsProvider;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 
-/**
- * Created by julieengel on 5/26/16.
- */
 public class AmazonClientManager {
 
     private CognitoCachingCredentialsProvider credentialsProvider = null;

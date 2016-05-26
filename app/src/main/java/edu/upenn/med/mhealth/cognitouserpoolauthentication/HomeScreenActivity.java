@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserSession;
 
 public class HomeScreenActivity extends AppCompatActivity {
 
@@ -21,7 +19,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_screen);
         user = AppHelper.getPool().getCurrentUser();
         TextView tv = (TextView) findViewById(R.id.loggedInUser);
-        tv.setText("You are logged in as " + user.getUserId());
+        tv.setText("You are logged in as " + user.getUserId() + ".");
 
         new SetTableTask().execute();
     }

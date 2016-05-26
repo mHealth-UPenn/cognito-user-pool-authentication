@@ -59,7 +59,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         AppHelper.getPool().signUpInBackground(usernameInput, passwordInput, userAttributes,
                 null, signUpHandler);
-        Intent intent = new Intent(this, HomeScreenActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();
     }
