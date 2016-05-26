@@ -1,16 +1,12 @@
 package edu.upenn.med.mhealth.cognitouserpoolauthentication;
 
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserSession;
@@ -27,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
     // Screen fields
     private EditText inUsername;
     private EditText inPassword;
-
-    private AlertDialog userDialog;
 
     // User Details
     private String username;
@@ -54,8 +48,8 @@ public class MainActivity extends AppCompatActivity {
     // App methods
     // Register user - start process
     public void signUp(View view) {
-        Intent registerActivity = new Intent(this, SignUpActivity.class);
-        startActivityForResult(registerActivity, 1);
+        Intent intent = new Intent(this, SignUpActivity.class);
+        startActivity(intent);
     }
 
     // Login if a user is already present
@@ -72,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
         password = inPassword.getText().toString();
         if(password == null || password.length() < 1) {
             TextView label = (TextView) findViewById(R.id.textViewUserPasswordMessage);
-            label.setText(inPassword.getHint()+" cannot be empty");
+            label.setText(inPassword.getHint() + " cannot be empty");
             return;
         }
 
@@ -133,32 +127,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onFailure(Exception e) {
-            TextView label = (TextView) findViewById(R.id.textViewUserIdMessage);
-            label.setText("Sign-in failed");
-
-            label = (TextView) findViewById(R.id.textViewUserIdMessage);
-            label.setText("Sign-in failed");
-
-            showDialogMessage("Sign-in failed", AppHelper.formatException(e));
+            Toast.makeText(getApplicationContext(),
+                    "Sign-in Failed.",
+                    Toast.LENGTH_LONG).show();
+            e.printStackTrace();
         }
     };
-
-    private void showDialogMessage(String title, String body) {
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(title).setMessage(body).setNeutralButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                try {
-                    userDialog.dismiss();
-                } catch (Exception e) {
-                    //
-                }
-            }
-        });
-        userDialog = builder.create();
-        userDialog.show();
-    }
-
 
 
 }

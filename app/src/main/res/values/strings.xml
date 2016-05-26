@@ -20,4 +20,5 @@
     <string name="title_activity_change_password">ChangePasswordActivity</string>
     <string name="title_activity_verify">VerifyActivity</string>
     <string name="title_activity_add_attribute">AddAttributeActivity</string>
+    <string name="home_message">Check your Cognito Identity Pool to ensure that there has been an authenticated access. Also check that your client was accessed as intended.\n\nThis example added a newly signed up user to a DynamoDB database and updated the number of sign ins for an existing user if logged in.</string>
 </resources>
